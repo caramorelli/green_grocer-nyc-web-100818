@@ -32,7 +32,7 @@ def apply_coupons(cart, coupon)
     if cart.has_key?(name) == true && cart[name][:count] >= item[:num]
       cart[name][:count] = cart[name][:count] - item[:num]
       new_item = name + (" W/COUPON")
-      puts cart.has_key?(new_item)
+      # puts cart.has_key?(new_item)
       if cart.has_key?(new_item) == false
         cart[new_item] = {:price => item[:cost], :clearance => cart[name_of_item][:clearance], :count => 1}
       else 
