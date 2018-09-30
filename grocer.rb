@@ -53,7 +53,7 @@ def checkout(cart, coupons)
   
   sum = 0
   
-  cart2.each do |name, price_hash|
+  cart2.each do |name, price|
     sum += price_hash[:price] * price_hash[:count]
   end
   
