@@ -12,20 +12,6 @@ def consolidate_cart(cart)
   item_count
 end
 
-
-# "AVOCADO W/COUPON"
-# def apply_coupons(cart, coupons)
-#   new_obj = {}
-#   cart.each do |item|
-#     new_obj[item.first] = item.last
-#   end 
-#   puts new_obj
-#   coupons.each do |ele|
-#     puts ele
-#   {'ITEM NAME W/COUPON' => ele[:item] }
-#   end 
-# end
-
 def apply_coupons(cart, coupon)
   coupon.each do |item|
     name = item[:item]
