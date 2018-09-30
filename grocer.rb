@@ -42,9 +42,9 @@ end
 
 
 
-def checkout(cart, coupons)
-  # code here
-end
+# def checkout(cart, coupons)
+#   # code here
+# end
 
 def checkout(items, coupons)
   cart = consolidate_cart(items)
