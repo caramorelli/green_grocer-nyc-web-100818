@@ -31,7 +31,7 @@ def apply_clearance(cart)
   cart.each do |item|
     cart_obj[item.first] = item.last 
     if cart_obj[item.first][:clearance] == true 
-       cart_obj[item.first][:price] = (cart_obj[item.first][:price] * 0.8).round(3) - (cart_obj[item.first][:price] * 0.2)).round(3)
+       cart_obj[item.first][:price] = (cart_obj[item.first][:price] * 0.8).round(3) 
     end 
   end 
   cart_obj
