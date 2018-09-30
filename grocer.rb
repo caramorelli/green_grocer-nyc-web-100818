@@ -28,7 +28,7 @@ end
 
 def apply_coupons(cart, coupon)
   coupon.each do |item|
-    name_of_item = item[:item]
+    name = item[:item]
     if cart.has_key?(name_of_item) == true && cart[name_of_item][:count] >= item[:num]
       cart[name_of_item][:count] = cart[name_of_item][:count] - item[:num]
       new_item = name_of_item + (" W/COUPON")
