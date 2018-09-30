@@ -1,15 +1,59 @@
 def consolidate_cart(cart)
-  # code here
+  item_count = {}
+  cart.each do |item|
+    item.each do |key, value|
+      if item_count.has_key?(key)
+        item_count[key][:count] += 1 
+      else 
+        item_count[key] = value.merge({:count => 1})
+      end 
+   end 
+  end 
+  item_count
 end
 
+
+# "AVOCADO W/COUPON"
 def apply_coupons(cart, coupons)
-  # code here
+  new_obj = {}
+  cart.each do |item|
+    new_obj[item.first] = item.last
+  end 
+  puts new_obj
+  coupons.each do |ele|
+    puts ele
+  {'ITEM NAME W/COUPON' => ele[:item] }
+  end 
 end
 
 def apply_clearance(cart)
-  # code here
+  cart_obj = {}
+  cart.each do |item|
+    cart_obj[item.first] = item.last 
+    if cart_obj[item.first][:clearance] == true 
+       cart_obj[item.first][:price] = (cart_obj[item.first][:price] - (cart_obj[item.first][:price] * 0.2)).round(3)
+    end 
+  end 
+  cart_obj
 end
+
+
 
 def checkout(cart, coupons)
   # code here
 end
+
+# def checkout(items, coupons)
+#   cart = consolidate_cart(items)
+#   cart1 = apply_coupons(cart, coupons)
+#   cart2 = apply_clearance(cart1)
+  
+#   total = 0
+  
+#   cart2.each do |name, price_hash|
+#     total += price_hash[:price] * price_hash[:count]
+#   end
+  
+#   total > 100 ? total * 0.9 : total
+  
+# end
