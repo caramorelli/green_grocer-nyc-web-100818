@@ -29,7 +29,7 @@ end
 def apply_coupons(cart, coupon)
   coupon.each do |item|
     name = item[:item]
-    if cart.has_key?(name_of_item) == true && cart[name_of_item][:count] >= item[:num]
+    if cart.has_key?(name) == true && cart[name][:count] >= item[:num]
       cart[name_of_item][:count] = cart[name_of_item][:count] - item[:num]
       new_item = name_of_item + (" W/COUPON")
       puts cart.has_key?(new_item)
